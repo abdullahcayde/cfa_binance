@@ -1,4 +1,9 @@
 # Secret files
 .*
 
+# 
+venv
+.DS_Store
+
+# config file
 docs/config.py
