@@ -1,1 +1,4 @@
+# Secret files
+.*
+
 docs/config.py
