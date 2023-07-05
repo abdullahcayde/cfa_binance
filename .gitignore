@@ -8,3 +8,4 @@ venv
 # config file
 docs/config.py
 __pycache__
+data/pgdatabase
