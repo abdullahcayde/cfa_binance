@@ -3,8 +3,31 @@ version: '3.1'
 services:
   myapp:
     container_name: my-app
-    image: tiangolo/uvicorn-gunicorn-fastapi:python3.10
+    build:
+      context: .
+      dockerfile: Dockerfile
     volumes: 
-      - /Users/macbook/Desktop/deneme_docker:/app
+      - /Users/macbook/Desktop/projects/Github_Repositories/cfa_binance:/app
     ports:
       - 9090:80
+    networks:
+      - my_network    
+
+  mydb:
+    container_name: mydb
+    image: postgres
+    ports:
+      - 5434:5432
+    environment: 
+      - POSTGRES_PASSWORD=12345
+      - PGDATA=/var/lib/postgresql/data/pgdata
+      - POSTGRES_USER=abdullahcay
+      - POSTGRES_DB=binance
+    volumes:
+      - /Users/macbook/Desktop/projects/Github_Repositories/cfa_binance/data/pgdatabase:/var/lib/postgresql/data/pgdata
+    networks:
+      - my_network
+
+networks:
+  my_network:
+    driver: bridge

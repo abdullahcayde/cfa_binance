@@ -1,0 +1,4 @@
+pandas==1.5.2
+joblib==1.2.0
+pmdarima==2.0.3
+pytest==7.4.0
