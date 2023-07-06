@@ -48,10 +48,11 @@ You should see containers: my_postgres
 
 ## Step 4: Loading Initial Data
 ## Step 5: Accessing the container locally from a web browser:
-
+ ```
 FastAPI: localhost:9090/docs
 PostgreSQL: localhost:5434 User:abdullahcay PW:12345 db:binance
-
+ ```
+ 
 # 4. Usage:
 ## FastAPI
 All endpoints are described in docs/...
