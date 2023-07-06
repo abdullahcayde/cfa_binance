@@ -23,7 +23,7 @@ async def assets():
                           "names" : names}]}
 
 
-# Prediction tomorrow price by Asset id
+# Prediction tomorrow price by Asset id and periods
 @app.get("/api/predict/{assetid:int}")
 async def predict_by_id(assetid, periods : Optional[int] = 1):
     if periods and (periods > 7 | periods <= 0) :
@@ -87,18 +87,4 @@ async def predict_by_id():
         return {"data": predictions}
     except Exception as e:
         return {"Error": str(e)}
-    
 
-# Prediction tomorrow price by Asset id and periods
-@app.get("/api/predict/{assetid:int}")
-async def predict_by_id(assetid):
-    def get_prediction(df, arima):
-        last_date = df['timestamp'].iloc[-1]
-        last_date_price = df['close'].iloc[-1]
-        asset_name = df_assets['name'].iloc[assetid - 1]
-        yhat = arima.predict(n_periods=1)
-        tomorrow_price =  list(yhat)[0]
-        return {"data": {"prediction_tomorrow_price": tomorrow_price,
-                "last_date": last_date,
-                "last_date_price": last_date_price,
-                "asset_name" : asset_name} }
