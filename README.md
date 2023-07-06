@@ -48,17 +48,18 @@ You should see containers: my_postgres
 
 ## Step 4: Loading Initial Data
 ## Step 5: Accessing the container locally from a web browser:
-Dashboard: localhost:8050
 
-FastAPI: 
-PostgreSQL:
+FastAPI: localhost:9090/docs
+PostgreSQL: localhost:5434 User:abdullahcay PW:12345 db:binance
 
 # 4. Usage:
-## Dashboard
 ## FastAPI
 All endpoints are described in docs/...
  ```
-  code...
+  /
+  /api/assets
+  /api/predict/{assetid:int}
+  /api/predictall
  ```
 # 5. Conclusion:
 We hope this guide has helped you get started with our CryptoBot with Binance Dashboard and FastAPI. 
