@@ -26,7 +26,7 @@ You can access our code and contribute to it if you like.
 
 # 3. Setup:
 ## Step 1: Cloning Github Repo
-To get started with our dashboard, you need to clone our Github repository to your local machine. Open your terminal and run the command:
+To get started with our application, you need to clone our Github repository to your local machine. Open your terminal and run the command:
 
   ```
   git clone https://github.com/abdullahcayde/cfa_binance.git
@@ -44,7 +44,7 @@ Run the following command to check if all containers are up and running:
  ```
   docker ps
  ```
-You should see containers: my_postgres
+You should see containers: mydb , my-app
 
 ## Step 4: Loading Initial Data
 ## Step 5: Accessing the container locally from a web browser:
