@@ -14,7 +14,7 @@ services:
       - my_network    
 
   mydb:
-    container_name: mydb2
+    container_name: mydb
     image: postgres
     ports:
       - 5434:5432
@@ -22,7 +22,7 @@ services:
       - POSTGRES_PASSWORD=12345
       - PGDATA=/var/lib/postgresql/data/pgdata
       - POSTGRES_USER=abdullahcay
-      - POSTGRES_DB=binance
+      - POSTGRES_DB=  
     volumes:
       - C:\Users\Besitzer\Desktop\projects\Github_Repositories\cfa_binance\data\pgdatabase:/var/lib/postgresql/data/pgdata
     networks:
