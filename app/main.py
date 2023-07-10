@@ -11,7 +11,7 @@ app = FastAPI()
 
 @app.get("/")
 async def home():
-    message = f"Hello Abdullah Cay! From FastAPI running on Uvicorn with Gunicorn. Using Python {version}"
+    message = f"Hello Eveline Farzane Abdullah! From FastAPI running on Uvicorn with Gunicorn. Using Python {version}"
     return {"message": message}
 
 
@@ -68,7 +68,7 @@ async def predict_all():
         
         if 10 < price_difference_ratio or price_difference > 100:
             buy_or_sell = "sell"
-        elif -10 > price_difference_ratio or price_difference < -10:
+        elif -10 > price_difference_ratio or price_difference < -100:
             buy_or_sell = "buy"
         else:
             buy_or_sell = "neither buy nor sell"
