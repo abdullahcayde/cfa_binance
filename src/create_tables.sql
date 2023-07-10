@@ -1,6 +1,11 @@
+CREATE TABLE IF NOT EXISTS assets (
+                        id int PRIMARY KEY,
+                        name varchar(15)
+                        );
+
 CREATE TABLE IF NOT EXISTS hourly (
                         id serial PRIMARY KEY,
-                        id_asset NUMERIC,
+                        id_asset int,
                         timestamp TIMESTAMP,
                         open NUMERIC, 
                         high NUMERIC,
@@ -12,12 +17,13 @@ CREATE TABLE IF NOT EXISTS hourly (
                         number_of_trades NUMERIC,
                         taker_buy_base_asset_volume NUMERIC,
                         taker_buy_quote_asset_volume NUMERIC,
-                        ignore NUMERIC
+                        ignore NUMERIC,
+                        FOREIGN KEY (id_asset) REFERENCES assets(id)
                         );
 
 CREATE TABLE IF NOT EXISTS daily (
                         id serial PRIMARY KEY,
-                        id_asset NUMERIC,
+                        id_asset int,
                         timestamp TIMESTAMP,
                         open NUMERIC, 
                         high NUMERIC,
@@ -29,12 +35,13 @@ CREATE TABLE IF NOT EXISTS daily (
                         number_of_trades NUMERIC,
                         taker_buy_base_asset_volume NUMERIC,
                         taker_buy_quote_asset_volume NUMERIC,
-                        ignore NUMERIC
+                        ignore NUMERIC,
+                        FOREIGN KEY (id_asset) REFERENCES assets(id)
                         );
 
 CREATE TABLE IF NOT EXISTS weekly (
                         id serial PRIMARY KEY,
-                        id_asset NUMERIC,
+                        id_asset int,
                         timestamp TIMESTAMP,
                         open NUMERIC, 
                         high NUMERIC,
@@ -46,12 +53,13 @@ CREATE TABLE IF NOT EXISTS weekly (
                         number_of_trades NUMERIC,
                         taker_buy_base_asset_volume NUMERIC,
                         taker_buy_quote_asset_volume NUMERIC,
-                        ignore NUMERIC
+                        ignore NUMERIC,
+                        FOREIGN KEY (id_asset) REFERENCES assets(id)
                         );
 
 CREATE TABLE IF NOT EXISTS weekly (
                         id serial PRIMARY KEY,
-                        id_asset NUMERIC,
+                        id_asset int,
                         timestamp TIMESTAMP,
                         open NUMERIC, 
                         high NUMERIC,
@@ -63,12 +71,13 @@ CREATE TABLE IF NOT EXISTS weekly (
                         number_of_trades NUMERIC,
                         taker_buy_base_asset_volume NUMERIC,
                         taker_buy_quote_asset_volume NUMERIC,
-                        ignore NUMERIC
+                        ignore NUMERIC,
+                        FOREIGN KEY (id_asset) REFERENCES assets(id)
                         );
 
 CREATE TABLE IF NOT EXISTS monthly (
                         id serial PRIMARY KEY,
-                        id_asset NUMERIC,
+                        id_asset int,
                         timestamp TIMESTAMP,
                         open NUMERIC, 
                         high NUMERIC,
@@ -80,12 +89,15 @@ CREATE TABLE IF NOT EXISTS monthly (
                         number_of_trades NUMERIC,
                         taker_buy_base_asset_volume NUMERIC,
                         taker_buy_quote_asset_volume NUMERIC,
-                        ignore NUMERIC
+                        ignore NUMERIC,
+                        FOREIGN KEY (id_asset) REFERENCES assets(id)
                         );
 
 CREATE TABLE IF NOT EXISTS daily_proceed (
                         id int,
                         timestamp TIMESTAMP,
+                        id_asset NUMERIC,
                         close NUMERIC,
                         FOREIGN KEY (id) REFERENCES daily (id)
                         );
+
