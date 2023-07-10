@@ -1,5 +1,5 @@
 CREATE TABLE IF NOT EXISTS assets (
-                        id int PRIMARY KEY,
+                        id_asset int PRIMARY KEY,
                         name varchar(15)
                         );
 
@@ -18,7 +18,7 @@ CREATE TABLE IF NOT EXISTS hourly (
                         taker_buy_base_asset_volume NUMERIC,
                         taker_buy_quote_asset_volume NUMERIC,
                         ignore NUMERIC,
-                        FOREIGN KEY (id_asset) REFERENCES assets(id)
+                        FOREIGN KEY (id_asset) REFERENCES assets(id_asset)
                         );
 
 CREATE TABLE IF NOT EXISTS daily (
@@ -36,7 +36,7 @@ CREATE TABLE IF NOT EXISTS daily (
                         taker_buy_base_asset_volume NUMERIC,
                         taker_buy_quote_asset_volume NUMERIC,
                         ignore NUMERIC,
-                        FOREIGN KEY (id_asset) REFERENCES assets(id)
+                        FOREIGN KEY (id_asset) REFERENCES assets(id_asset)
                         );
 
 CREATE TABLE IF NOT EXISTS weekly (
@@ -54,7 +54,7 @@ CREATE TABLE IF NOT EXISTS weekly (
                         taker_buy_base_asset_volume NUMERIC,
                         taker_buy_quote_asset_volume NUMERIC,
                         ignore NUMERIC,
-                        FOREIGN KEY (id_asset) REFERENCES assets(id)
+                        FOREIGN KEY (id_asset) REFERENCES assets(id_asset)
                         );
 
 CREATE TABLE IF NOT EXISTS weekly (
@@ -72,7 +72,7 @@ CREATE TABLE IF NOT EXISTS weekly (
                         taker_buy_base_asset_volume NUMERIC,
                         taker_buy_quote_asset_volume NUMERIC,
                         ignore NUMERIC,
-                        FOREIGN KEY (id_asset) REFERENCES assets(id)
+                        FOREIGN KEY (id_asset) REFERENCES assets(id_asset)
                         );
 
 CREATE TABLE IF NOT EXISTS monthly (
@@ -90,13 +90,13 @@ CREATE TABLE IF NOT EXISTS monthly (
                         taker_buy_base_asset_volume NUMERIC,
                         taker_buy_quote_asset_volume NUMERIC,
                         ignore NUMERIC,
-                        FOREIGN KEY (id_asset) REFERENCES assets(id)
+                        FOREIGN KEY (id_asset) REFERENCES assets(id_asset)
                         );
 
-CREATE TABLE IF NOT EXISTS daily_proceed (
+CREATE TABLE IF NOT EXISTS daily_proceed_all (
                         id int,
                         timestamp TIMESTAMP,
-                        id_asset NUMERIC,
+                        id_asset int,
                         close NUMERIC,
                         FOREIGN KEY (id) REFERENCES daily (id)
                         );
