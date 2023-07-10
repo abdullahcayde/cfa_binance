@@ -47,6 +47,13 @@ Run the following command to check if all containers are up and running:
 You should see containers: mydb , my-app
 
 ## Step 4: Loading Initial Data
+
+
+ ```
+  create_tables.sql
+  python add_data_to_container.py
+ ```
+
 ## Step 5: Accessing the container locally from a web browser:
  ```
 FastAPI: localhost:9090/docs
